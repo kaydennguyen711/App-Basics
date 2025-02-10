@@ -13,9 +13,9 @@ export default function SignInScreen() {
       (u) => u.username === username && u.password === password
     );
     if (user) {
-      navigation.navigate('Welcome', { username });
+      navigation.navigate('Welcome');
     } else {
-      Alert.alert('Invalid credentials', 'Please try again.');
+      Alert.alert('Invalid Username or Password', 'Please try again.');
     }
   };
 
