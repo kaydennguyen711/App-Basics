@@ -27,24 +27,47 @@ export default function SignInScreen() {
   };
 
   return (    
-    <View style={{ padding: 16, display: 'flex', alignItems: 'center', gap: 16 }}>
-      <Text>Sign In</Text>
-      <TextInput style={styles.input} placeholder="Username" value={username} onChangeText={setUsername} />
-      <TextInput style={styles.input} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
+    <View style={styles.container}>
+      <Text style={styles.title}>Sign In</Text>
+      <TextInput 
+        style={styles.input} 
+        placeholder="Username" 
+        value={username} 
+        onChangeText={setUsername} 
+      />
+      <TextInput 
+        style={styles.input} 
+        placeholder="Password" 
+        value={password} 
+        onChangeText={setPassword} 
+        secureTextEntry 
+      />
       <Button title="Sign In" onPress={validateUser} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    input: {
-      height: 45,
-      width: '50%',
-      borderColor: '#DDD',
-      borderWidth: 1,
-      borderRadius: 8,
-      paddingHorizontal: 10,
-      fontSize: 18,
-      textAlign: 'center'
-    }
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    height: 45,
+    width: '80%',
+    borderColor: '#DDD',
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 12,
+  },
 });
